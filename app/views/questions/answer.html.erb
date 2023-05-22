@@ -1,0 +1,32 @@
+<div class="card text-bg-light p-3 m-3" style="max-width: 18rem;">
+  <div class="card-header">-You</div>
+  <div class="card-body">
+    <p class="card-text"><%= @question = params[:answer] %></p>
+  </div>
+</div>
+
+<% if @question.capitalize == "I am going to work" %>
+<div class="card text-bg-light m-3 p-3" style="max-width: 18rem;">
+  <div class="card-header">-Your coach</div>
+  <div class="card-body">
+    <p class="card-text"><p><%= "Great!" %></p></p>
+  </div>
+</div>
+
+<% elsif @question.include?("?") %>
+<div class="card text-bg-light m-3 p-3" style="max-width: 18rem;">
+  <div class="card-header">-Your coach</div>
+  <div class="card-body">
+    <p class="card-text"><p><%= "Silly question, get dressed and go to work!" %></p></p>
+  </div>
+</div>
+<% else  %>
+<div class="card text-bg-light m-3 p-3" style="max-width: 18rem;">
+  <div class="card-header">-Your coach</div>
+  <div class="card-body">
+    <p class="card-text"><p><%= "I don't care, get dressed and go to work!" %></p></p>
+  </div>
+</div>
+<% end %>
+
+<button type="button" class="btn btn-light"><%= link_to "Ask another question", ask_path %></button>
